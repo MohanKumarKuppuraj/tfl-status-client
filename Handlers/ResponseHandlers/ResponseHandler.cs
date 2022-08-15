@@ -6,7 +6,6 @@ using Newtonsoft.Json;
 namespace Handler{
 
 	public class ResponseHandler: IResponseHandler{
-
 		public ResponseData RoadStatusResponseHandler(String roadId,String apiResponseStr ){
 			ResponseData response = new ResponseData();
 			//Error First Approach
@@ -20,10 +19,14 @@ namespace Handler{
 					}catch(JsonSerializationException exDict){
 						apiResponse = null;
 					}
+			}catch(ArgumentNullException nullPointerException)
+			{
+				apiResponse = null;
 			}
-
 			if(apiResponse == null){
 				response.message += "Unable to connect the server, Server does not return any data"+ Environment.NewLine;
+			}else if(roadId == null || roadId.Trim().Equals("")){
+				response.message += "Program not supplied with Road ID"+ Environment.NewLine;
 			}else if(apiResponse.Count >0){
 				if(apiResponse[0]!=null){
 					if(apiResponse[0].Keys.Count>0 && apiResponse[0].ContainsKey("httpStatusCode")){

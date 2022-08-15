@@ -1,0 +1,10 @@
+[{
+	"$type": "Tfl.Api.Presentation.Entities.RoadCorridor, Tfl.Api.Presentation.Entities",
+	"id": "a10",
+	"displayName": "A10",
+	"statusSeverity": "Closure",
+	"statusSeverityDescription": "Closure",
+	"bounds": "[[-0.08703,51.52719],[-0.04999,51.68256]]",
+	"envelope": "[[-0.08703,51.52719],[-0.08703,51.68256],[-0.04999,51.68256],[-0.04999,51.52719],[-0.08703,51.52719]]",
+	"url": "/Road/a10"
+}]
