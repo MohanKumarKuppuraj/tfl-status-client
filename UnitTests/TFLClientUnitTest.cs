@@ -24,7 +24,7 @@ namespace TFLClientTest {
 
 		[Fact]
 		public void Test_RoadStatus_ResponseHandler_Failure_Result(){
-			ResponseData response = responseHandler.RoadStatusResponseHandler("A100","[{\"$type\": \"Tfl.Api.Presentation.Entities.ApiError, Tfl.Api.Presentation.Entities\",\"timestampUtc\": \"2022-08-15T13:36:24.4945317Z\",\"exceptionType\": \"EntityNotFoundException\",\"httpStatusCode\": 404,\"httpStatus\": \"NotFound\",\"relativeUri\": \"/Road/A100?app_id=53eb88e1ccb34f52bdb9f92c29a27cd8&app_key=6cfaa478b1984b8890159a305c24c3be\",\"message\": \"The following road id is not recognised: A100\"}]");
+			ResponseData response = responseHandler.RoadStatusResponseHandler("A100","{\"$type\": \"Tfl.Api.Presentation.Entities.ApiError, Tfl.Api.Presentation.Entities\",\"timestampUtc\": \"2022-08-15T13:36:24.4945317Z\",\"exceptionType\": \"EntityNotFoundException\",\"httpStatusCode\": 404,\"httpStatus\": \"NotFound\",\"relativeUri\": \"/Road/A100?app_id=53eb88e1ccb34f52bdb9f92c29a27cd8&app_key=6cfaa478b1984b8890159a305c24c3be\",\"message\": \"The following road id is not recognised: A100\"}");
 			Assert.Equal(response.results.ContainsKey("statusSeverity"),false);
 			Assert.Equal(response.results.ContainsKey("statusSeverityDescription"),false);
 			Assert.Contains("A100 is not a valid road",response.message);
