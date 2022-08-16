@@ -6,6 +6,14 @@ using Newtonsoft.Json;
 namespace Handler{
 
 	public class ResponseHandler: IResponseHandler{
+		/// <summary>
+		/// Function to handle Road Status Response
+		/// </summary>
+		/// <param name="roadId">Road Id supplied from client args</param>
+		/// <param name="apiResponseStr">Response data from API Response</param>
+		/// <returns>
+		/// Returns ResponseData of a defined format
+		///</returns>
 		public ResponseData RoadStatusResponseHandler(String roadId,String apiResponseStr ){
 			ResponseData response = new ResponseData();
 			//Error First Approach

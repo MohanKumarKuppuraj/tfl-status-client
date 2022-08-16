@@ -7,6 +7,7 @@ using System.Collections.Generic;
 namespace Utility{
 
 	public class RequestUtility : IRequestUtility{
+		/*Pre-define REST Methods to handle string parameters*/
 		public Dictionary<String,RestSharp.Method> methods = new Dictionary<String,RestSharp.Method>(){
 			{"",Method.Get},
 			{"GET",Method.Get},
@@ -16,6 +17,13 @@ namespace Utility{
 			{"DELETE",Method.Delete}
 		};
 
+		/// <summary>
+		/// Function to Get API Response
+		/// </summary>
+		/// <param name="requestOptions">Rest Request Options</param>
+		/// <returns>
+		/// Returns API response as String
+		/// </returns>
 		public String RequestAPI(RequestOptions requestOptions){
 			try{
 			RestClient restClient = new RestClient(requestOptions.endPoint);
