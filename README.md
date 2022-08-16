@@ -1,9 +1,13 @@
 # PROJECT BUILD and EXECUTION
 
 -use the command "dotnet restore" to restore the dependencies
+
 -use the command "dotnet build" to build the project 
+
 -dotnet publish -c Release --output ./Release
+
 -run "Release/RoadStatus.exe" {roadid} from the project root folder to run the client after build. {roadid} is your run time parameter
+
 -echo %errorlevel% to see the Error Level of the client after run.
 
 
