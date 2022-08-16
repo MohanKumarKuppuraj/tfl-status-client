@@ -19,6 +19,11 @@ namespace Utility{
 			this.responseHandler = new ResponseHandler();
 		}
 
+		/*
+		
+			Constructor to pass mocked Request Utility Object
+
+		*/
 		public RoadStatusUtility(IRequestUtility _requestUtility){
 			this.requestUtility = _requestUtility;
 			this.responseHandler = new ResponseHandler();
